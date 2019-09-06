@@ -56,9 +56,9 @@ def load_labels(label_file):
   return label
 
 if __name__ == "__main__":
-  file_name = "test1/flower_photos/daisy/3475870145_685a19116d.jpg"
-  model_file = "test1/output_graph.pb"
-  label_file = "test1/output_labels.txt"
+  file_name = "model/flower_photos/daisy/3475870145_685a19116d.jpg"
+  model_file = "model/output_graph.pb"
+  label_file = "model/output_labels.txt"
   input_height = 299
   input_width = 299
   input_mean = 0
