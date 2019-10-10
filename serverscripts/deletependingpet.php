@@ -1,9 +1,12 @@
 <?php
 
+// get parameters in the get or post request
 $filename = $_REQUEST['filename'];
 
+// set the response header
 header('Content-type: application/json');
 
+// if 
 if( empty($filename) ){
     echo json_encode("missing 'filename'");
     die;
