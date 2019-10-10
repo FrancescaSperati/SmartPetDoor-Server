@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 
 // get parameters in the get or post request
 $filename = $_REQUEST['filename'];

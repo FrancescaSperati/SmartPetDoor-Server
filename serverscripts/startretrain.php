@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 
 $photos = realpath("../photos");
 $retrain = realpath("../retrain.py");

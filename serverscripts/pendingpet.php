@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 
 $files = array_diff(scandir("../pendingpet"), array('..', '.'));
 

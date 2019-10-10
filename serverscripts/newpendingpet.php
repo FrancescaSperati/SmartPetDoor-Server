@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 
 if(!empty($_FILES['file']['tmp_name'])){
 
