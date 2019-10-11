@@ -44,17 +44,16 @@ if(!empty($_FILES['file']['tmp_name'])){
             );
         $resulth = curl_exec($chh);
 
-        $data_string = json_encode(array('text' => 'New Pending Pet!!!'));
-
-        $ch = curl_init('https://hooks.slack.com/services/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');
-        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-                'Content-Type: application/json',
-                'Content-Length: ' . strlen($data_string))
-            );
-        $result = curl_exec($ch);
+        // $data_string = json_encode(array('text' => 'New Pending Pet!!!'));
+        // $ch = curl_init('https://hooks.slack.com/services/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');
+        // curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+        // curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
+        // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        // curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        //         'Content-Type: application/json',
+        //         'Content-Length: ' . strlen($data_string))
+        //     );
+        // $result = curl_exec($ch);
     
         echo "Uploaded successfully!";
     
