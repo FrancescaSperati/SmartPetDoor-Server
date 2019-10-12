@@ -14,6 +14,8 @@ ssh -i ~/.ssh/googleserver francescasperati@35.244.89.241
 To open the editor VisualStudioCodeOnline:
 https://35.244.89.241/
 
+(unfortunately, operating with the server includes expenses, so the access it will not be shared on this page)
+
 To run the Retrain: 
 python retrain.py --image_dir photos \
  --output_graph=model/output_graph.pb \
