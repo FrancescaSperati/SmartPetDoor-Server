@@ -28,3 +28,19 @@ python retrain.py --image_dir photos \
 
 To classify a picture: (example of a daisi)
 python classify.py --image=margherita.jpg
+
+
+Into the serverscripts folder, there is a collection of all the scripts necessary to link the three projects (SmartPetDoor-Server, SmartPetDoor-Flap, and SmartPetDoor-App)
+
+- newpendingpet.php 
+ creates a new file representing the pet picture, and sends it to the Firebase Cloud Messaging API
+- newpet.php 
+ creates a new folder into photos, having the pet's name_y, and containing all puctures uploaded with unique names (date stamp)
+- deletependingpet.php
+ deletes the newpet picture from the pendingpet folder
+- opendoor.php
+ executes the openclose.py script on the raspberry pi
+- pendingpet.php 
+ encodes the base_64 pictures from the pendingpet folder, so they can be sent to the Firebase API and red from the App
+- startretrain.php
+ executes the retrain.py of all pictures contained into the photos folder
