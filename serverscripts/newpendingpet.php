@@ -13,11 +13,16 @@ if(!empty($_FILES['file']['tmp_name'])){
         array_pop($classifyScores);
 
         $petAllowed = false;
+        $txtScores = ' -- ';
 
         foreach($classifyScores as $score){
-            $nameScore = explode("=", $sgitcore);
+            $txtScores .= $score;
+            $txtScores .= " | ";
+            $nameScore = explode("=", $score);
 
-            if ( strrpos($nameScore[0], " y") && floatval($nameScore[1]) > 0.9 ){
+            // FIX THE PERCENTAGE !!!!!!!!!!!!!!!!!!!!
+
+            if ( strrpos($nameScore[0], " y") && floatval($nameScore[1]) > 0.80 ){
                 $petAllowed = true;
             }
             
@@ -29,10 +34,12 @@ if(!empty($_FILES['file']['tmp_name'])){
 
             echo shell_exec("sudo -u francescasperati ssh -i /home/francescasperati/rpisshkey pi@10.8.0.2 'python3 Documents/SmartPetDoor-Flap/openclose.py' > /dev/null 2>/dev/null &");
 
+            echo "-> allowed $txtScores";
+
             die;
         }
 
-        $push_string = '{"to": "/topics/newpet","notification": {"title": "Hey! New Pet!","body": "A pet is waiting in front of your door!"}}';
+        $push_string = '{"to": "/topics/newpet","priority": "high","notification": {"title": "Hey! New Pet!","body": "A pet is waiting in front of your door!", "sound": "default"}}';
 
         $chh = curl_init('https://fcm.googleapis.com/fcm/send');
         curl_setopt($chh, CURLOPT_CUSTOMREQUEST, "POST");
@@ -55,14 +62,14 @@ if(!empty($_FILES['file']['tmp_name'])){
         //     );
         // $result = curl_exec($ch);
     
-        echo "Uploaded successfully!";
+        echo "-> denied, sent to app $txtScores";
     
     } else {
-        echo "Upload failed!";
+        echo "-> failed";
     }
 
 } else {
-    echo "Missing file";
+    echo "-> missing";
 }
 
 ?>

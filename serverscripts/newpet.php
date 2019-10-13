@@ -4,6 +4,8 @@ header("Access-Control-Allow-Origin: *");
 $petname = $_REQUEST['petname'];
 $petimage = $_REQUEST['petimage'];
 
+//file_put_contents('log.txt', serialize($_REQUEST), FILE_APPEND);
+
 header('Content-type: application/json');
 
 if( empty($petname) || empty($petimage)  ){
