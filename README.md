@@ -44,3 +44,8 @@ Into the serverscripts folder, there is a collection of all the scripts necessar
  encodes the base_64 pictures from the pendingpet folder, so they can be sent to the Firebase API and red from the App
 - startretrain.php
  executes the retrain.py of all pictures contained into the photos folder
+
+
+
+All code of this repository is property and copyright of Francesca Sperati and Charlie Chiu, 
+Licence is proprietary and all rights are reserved
